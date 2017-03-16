@@ -49,8 +49,13 @@ def charFound (c,s):
 		return c == x
 	return len(list(filter(caracter, s)))>0
 #Escreva uma função que receba uma lista de strings e retorne uma nova lista com adição de marcações HTML (p.ex.: <B> e </B>) antes e depois de cada string.
+'primeira solução, a marcação é sempre <B> e </B>'
 def addmarcAux(s):
     return "<B>"+s+"</B>"
 def addmarc(l):
     return list(map(addmarcAux, l))
-    
+'segunda solução, o usuario decide a letra entre os simbolos da marcação'
+def admarc(l, m):
+    def marc (s):
+        return "<"+m+">"+s+"</"+m+">"
+    return list(map(marc, l))

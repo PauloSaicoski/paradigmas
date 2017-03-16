@@ -36,10 +36,18 @@ def par(n):
 def pares(l):
     return list(filter(par, l))
 #Crie uma função charFound(c,s) que verifique se o caracter c está contido na string. O resultado deve ser True ou False. Você não deve usar o operador in. Defina uma função auxiliar para ajudar neste exercício.
+'primeira solução'
+'''
 def caracter(c,x):
     return x==c
 def charFound(c, s):
     return len(list(filter(None, list(map(caracter, c*len(s), s)))))>0
+'''
+'segunda solução'
+def charFound (c,s):
+	def caracter (x):
+		return c == x
+	return len(list(filter(caracter, s)))>0
 #Escreva uma função que receba uma lista de strings e retorne uma nova lista com adição de marcações HTML (p.ex.: <B> e </B>) antes e depois de cada string.
 def addmarcAux(s):
     return "<B>"+s+"</B>"

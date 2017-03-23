@@ -33,7 +33,8 @@ def stripVowels(s):
 >>> hideChars("")
 ''
 '''
-
+def hideChars(s):
+    return ''.join([' ' if letra == ' ' else '-' for letra in s])
 
 #Defina uma função que receba um número n e retorne uma tabela de números de 1 a n e seus quadrados, conforme os exemplos abaixo (você vai usar tuplas em Python):
 '''
@@ -44,11 +45,17 @@ def stripVowels(s):
 >>> genTable(1)
 [(1, 1)]
 '''
+def genTable(n):
+    return [(x,x**2) for x in range(1,n+1)]
+
 #Defina uma função que receba uma lista de palavras e retorne uma string contendo o primeiro e o último caracter de cada palavra da lista. Exemplo:
 '''
 >>> genCode(['abacaxi','mamao','banana'])
 'aimoba'
 '''
+def genCode(l):
+   	return ''.join([palavra[0]+palavra[-1] for palavra in l])
+
 #Defina uma função myZip(l1,l2) que reproduza o comportamento da função zip do Python:
 '''
 >>> myZip([1,2,3],[4,5,6])
@@ -56,6 +63,8 @@ def stripVowels(s):
 >>> myZip([1,2,3],[4,5])
 [(1, 4), (2, 5)]
 '''
+
+
 #Escreva uma função enumerate(words) que numere cada palavra da lista recebida:
 '''
 >>> enumerate(['abacaxi','mamao','banana'])

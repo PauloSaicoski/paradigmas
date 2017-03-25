@@ -63,13 +63,16 @@ def genCode(l):
 >>> myZip([1,2,3],[4,5])
 [(1, 4), (2, 5)]
 '''
-
+def myZip(l1,l2):
+    return [(l1[n],l2[n]) for n in range(min(len(l1),len(l2)))]
 
 #Escreva uma função enumerate(words) que numere cada palavra da lista recebida:
 '''
 >>> enumerate(['abacaxi','mamao','banana'])
 [(1, 'abacaxi'), (2, 'mamao'), (3, 'banana')]
 '''
+def enumerate(words):
+    return [(n+1,words[n]) for n in range(len(words))]
 #Escreva uma função isBin(s) que verifique se a string recebida representa um número binário. Exemplo:
 '''
 >>> isBin('1010')
@@ -77,8 +80,12 @@ True
 >>> isBin('1012')
 False
 '''
+def isBin(s):
+    return len([x for x in s if x not in "10"])==0
+
 #Escreva uma função bin2dec(digits), que receba uma lista de dígitos representando um número binário e retorne seu equivalente em decimal. Exemplo:
 '''
 >>> bin2dec([1,1,1,1])
 15
 '''
+    

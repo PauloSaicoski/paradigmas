@@ -88,4 +88,5 @@ def isBin(s):
 >>> bin2dec([1,1,1,1])
 15
 '''
-    
+def bin2dec(digits):
+    return sum([digits[-x-1]*2**x for x in range(len(digits))])

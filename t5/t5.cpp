@@ -150,4 +150,8 @@ int main()
     std::cout << it_u->getPontos() << std::endl;
   }
   std::cout << std::endl;
+  for (c = Competidor.begin(); c != Competidor.end(); c++)
+  {
+    delete c->second;
+  }
 }

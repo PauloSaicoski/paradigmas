@@ -68,20 +68,25 @@ public:
     int result;
     try {
       int a = std::stoi(gui->inputQuant->value());
-      if (gui->b == 0){
-        gui->vetEmb(a);
-        gui->b++;
-      }
-      result = gui->vencedor();
-      std::string g = "º Ganhador";
-      gui->n++;
-      g = std::to_string(gui->n).c_str() + g;
-      if(result){
-        gui->boxNoGanhador->copy_label(g.c_str());
-        gui->boxVencedor->copy_label(std::to_string(result).c_str());
+      if (a<=0){
+        fl_alert("Digite um numero maior que zero");
       }
       else{
-        gui->reset();
+        if (gui->b == 0){
+          gui->vetEmb(a);
+          gui->b++;
+        }
+        result = gui->vencedor();
+        std::string g = "º Ganhador";
+        gui->n++;
+        g = std::to_string(gui->n).c_str() + g;
+        if(result){
+          gui->boxNoGanhador->copy_label(g.c_str());
+          gui->boxVencedor->copy_label(std::to_string(result).c_str());
+        }
+        else{
+          gui->reset();
+        }
       }
     } catch (std::invalid_argument&) {
       fl_alert("Digite um numero.");

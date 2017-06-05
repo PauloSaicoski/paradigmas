@@ -15,6 +15,8 @@ class UserInterface {
 public:
   UserInterface();
 protected:
+  Fl_PNG_Image* myimage;
+  Fl_Box *boxImg;
   Fl_Double_Window *w;
   Fl_Int_Input *inputQuant;
   Fl_Box *boxVencedor;

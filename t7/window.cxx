@@ -11,6 +11,12 @@ UserInterface::UserInterface() {
       inputQuant->labelsize(20);
       inputQuant->align(Fl_Align(FL_ALIGN_TOP));
     } // Fl_Int_Input* inputQuant
+    {
+     myimage = new Fl_PNG_Image("logo.png");
+     boxImg = new Fl_Box(25, 25, 350, 250);
+     boxImg->image(myimage);
+     boxImg->redraw();
+    } //aqui para a logo
     { boxVencedor = new Fl_Box(65, 423, 265, 67);
       boxVencedor->box(FL_DOWN_BOX);
       boxVencedor->labelsize(28);
